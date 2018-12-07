@@ -111,7 +111,11 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
   updatePagination($event) {
     const ele = $event.srcElement;
-    this.perPage = 1 * ele.value;
+    if (ele.value === 'all') {
+      this.perPage = this.length;
+    } else {
+    this.perPage = (1 * ele.value);
+    }
     this.initialize();
   }
 

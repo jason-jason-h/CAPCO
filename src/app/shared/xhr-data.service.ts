@@ -16,7 +16,7 @@ export class XhrDataService {
   constructor(private http: HttpClient) {}
 
   getData(url) {
-    console.log('Get Data');
+    console.log('Get Data: ', url);
     return this.http.get<Table[]>(url)
     .pipe(
       retry(2),
@@ -31,7 +31,7 @@ export class XhrDataService {
         'Authorization': 'some-auth-data'
       })
     };
-    console.log('Posting: ', this.postUrl, data, httpOptions);
+    console.log('Post Data: ', this.postUrl, data, httpOptions);
     return this.http.post(this.postUrl, data, httpOptions)
     .pipe(
       catchError(this.handleError)

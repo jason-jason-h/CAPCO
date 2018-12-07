@@ -60,7 +60,6 @@ export class AppComponent implements OnInit {
     this.postData(truncateEventData);
   }
   postData(payload) {
-    console.log(payload);
     this.dataService.postData(payload).subscribe(data => {
        this.postedData = data;
      });
