@@ -1,0 +1,45 @@
+<div class="paginate"><div *ngIf="loading">Calculating...</div></div>
+<div class="paginate" *ngIf="!loading && showPaginator">
+  <div>
+    Per page:
+    <select
+      #paginatorBottom
+      aria-label="Select the number of items to display per page"
+      class="form-style"
+      (change)="updatePagination($event)"
+    >
+      <option selected="selected" disabled="disabled">{{ perPage }}</option>
+      <option value="15">15</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="all">All</option>
+    </select>
+  </div>
+  <div>
+    <span
+      >Page <strong>{{ currentPage }}</strong> of
+      <strong>
+        <span *ngIf="totalPagesMax">{{ this.max }}+</span>
+        <span *ngIf="!totalPagesMax">{{ totalPages }}</span>
+      </strong></span
+    >
+    <button
+      (click)="changePage($event)"
+      [disabled]="!showBackButton"
+      class="form-style"
+      aria-label="Previous Page"
+      value="-"
+    >
+      &lt;
+    </button>
+    <button
+      (click)="changePage($event)"
+      [disabled]="!showForwardButton"
+      class="form-style"
+      aria-label="Next Page"
+      value="+"
+    >
+      &gt;
+    </button>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<h3>Table Component: Sample JSON Data </h3>
+<div class="table-container">
+  <table class="standard-fixed">
+    <thead #dataTableHeader>
+      <tr>
+        <th *ngFor="let item of headerData">{{ item.header }}</th>
+      </tr>
+    </thead>
+    <tbody
+      #dataTableBody
+      (scroll)="parallelScroll($event)"
+
+    >
+      <tr *ngFor="let row of tableData | slice:showFromIndex:showToIndex; let i = index;">
+        <td *ngFor="let headerItem of headerData" title="{{ row[headerItem.field] }} ">
+            <span *ngIf="headerItem.field != 'action'">
+               {{ row[headerItem.field] }}</span>
+            <span *ngIf="headerItem.field == 'action'"><button class="row-action" (click)="rowClicked(row)">Post</button></span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="(headerData.length)">
+          <app-paginator
+            *ngIf="tableData && (tableData.length > 7)"
+            [max]="paginatorCounterMax"
+            [length]="tableData.length"
+          [perPage]="PaginationItemsPerPage"
+            (paginationAction)="paginationChange($event)"
+          ></app-paginator>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

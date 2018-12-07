@@ -1,0 +1,18 @@
+<header>
+  <h1>{{ title }}:</h1>
+  <h2 class>
+    Completed by <a href="mailto: hodgesjaso@verizon.net">Jason L. Hodges</a> in
+    Angular {{ angularVersion }}
+  </h2>
+  <hr />
+</header>
+<main>
+  <app-table [tableData]="data" [paginatorCounterMax]="1000"  [PaginationItemsPerPage]="15" [headerData]="cols" (ifRowClicked)="rowClicked($event)"></app-table>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <h2 class>
+    Completed by <a href="mailto: hodgesjaso@verizon.net">Jason L. Hodges</a> in
+    Angular {{ angularVersion }}
+  </h2>
+</footer>

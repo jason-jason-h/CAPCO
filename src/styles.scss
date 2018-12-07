@@ -1,0 +1,185 @@
+/* You can add global styles to this file, and also import other style files */
+$color-1: #484F5C;
+$color-2: #363338;
+$color-3: #69737A;
+$color-4: #8D999E;
+$color-5: #B9C2C9;
+$color-6: #D3D9DE;
+$table-alt-row-bg: #f6f7f8;
+$table-row-hover-bg: #e9ecee;
+
+$alt-color-1: #f0f0f0;
+
+$padding-1: .5rem;
+$padding-2: 1rem;
+$padding-3: 2rem;
+
+$header-font-stack: Helvetica, Arial, verdana;
+$body-font-stack: Verdana, Geneva, Tahoma, sans-serif;
+
+html {
+    font-size: 10px;
+}
+body {
+    font-family: $body-font-stack;
+    color: $color-2;
+    margin: 0;
+    padding: $padding-1;
+    position: relative;
+ }
+h1,h2 {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+    padding: 0;
+    font-family: $header-font-stack;
+}
+a, a:visited, a:active, a:hover {
+    color: #69737A;
+}
+
+// Custom styles ally to form elements
+.form-style {
+    border: 0;
+    border-radius: 0;
+    background-color: $color-1;
+    padding: 0 1rem;
+    color: #FFF;
+    font-weight: 700;
+}
+
+main {
+    margin: 3rem;
+}
+footer {
+    position: fixed;
+    bottom: $padding-1;
+    left: $padding-1;
+}
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        font-size: 1.2rem;
+        &:before {
+            content: 'Responses: ';
+            font-weight: 400;
+        }
+    li {
+        display: inline-block;
+        padding: .2rem .3rem;
+        margin: 0 .5rem;
+        text-align: center;
+        a {
+            text-decoration: none;
+            font-weight: 700;
+        }
+        &:hover {
+            background-color: $alt-color-1;
+        }
+            
+        }
+    }
+}
+
+.table-container {
+ border: 1px solid $color-5;
+ width: 50vw;
+ padding: 0;
+ resize: horizontal;
+ overflow: hidden;
+ padding-bottom: 1.2rem;
+ background-color: $color-1;
+}
+table.standard-fixed {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    overflow: hidden;
+    font-size: 1.3rem;
+    border-spacing: 0;
+    
+    thead {
+        display: block;
+        overflow-x: hidden;
+        background-color: $color-1;
+        color: $alt-color-1;
+        th {
+            text-align: left;
+            min-width: 17rem;
+            padding: 1rem;
+            margin: 0;
+        }
+    }
+    tbody {
+        display: block;
+        overflow-x: auto;
+        overflow-y: auto;
+        background-color: #FFF;
+        height: 250px;
+        tr {
+            &:nth-of-type(even) {
+                background-color: $table-alt-row-bg;
+            }
+            &:hover {
+                background-color: $table-row-hover-bg;
+            }
+        }
+        td {
+            min-width: 17rem;
+            padding: .5rem 1rem;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 0;
+            .row-action {
+                background-color: $color-6;
+                border: 0;
+                padding: .1rem 2rem;
+                &:hover {
+                    background-color: $color-5;
+                }
+            }
+        }
+    }
+    tfoot {
+        display: block;
+        tr {
+            display: block;
+            background-color: $color-1;
+            color: $alt-color-1;
+        }
+        td {
+            display: block;
+            text-align: right;
+            padding: 1rem 1rem 0 1rem;
+        }
+    }
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    .paginate {
+        display: flex;
+        justify-content: space-between;
+        select {
+            border: 1px solid $color-6;
+            border-width: 0 0 1px 0;
+        }
+        button {
+            margin: 0 .5rem;
+            padding: 0 .5rem;
+            font-size: 1.4rem;
+            &:first-of-type {
+                margin-left: 3rem;
+            }
+            &:last-of-type {
+                margin-right: 0
+            }
+            &:hover {
+                color: $color-5;
+            }
+            &:disabled {
+                color: $color-3;
+            }
+        }
+    }
+}
+
