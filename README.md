@@ -20,7 +20,7 @@ The objective is to implement a TABLE component according to the specifications 
 -	Each row should contain a button which shall submit the row ID and row status to /api/submit as a POST request – You are not expected to create the POST endpoint, but you can mock one if you like
 
 ### Technologies
--	Angular 4+ (Solution in Angular 7.1.1)
+-	Angular 4+ (solution completed in Angular 7.1.1)
 -	Angular CLI
 -	Karma / Jasmine
 -	Sass/Scss (optional)
